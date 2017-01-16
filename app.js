@@ -12,9 +12,14 @@ server.listen(process.env.port || process.env.PORT || 3978, function() {
 });
 
 // Create chat bot
+/*
 var connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
+});*/
+var connector = new builder.ChatConnector({
+    appId: "8567d85d-df78-4db2-9de5-b4a175c0df21",
+    appPassword: "6vZN3HG88nWPjTzicX9VEZN"
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
