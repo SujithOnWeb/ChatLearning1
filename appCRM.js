@@ -66,7 +66,7 @@ bot.on('contactRelationUpdate', function(message) {
         var name = message.user ? message.user.name : null;
         var reply = new builder.Message()
             .address(message.address)
-            .text("Hello %s... Thanks for adding me. Say 'hello' to start the conversation", name || 'there');
+            .text("Hello %s... Thanks for adding me. Say 'hello' to see some great demos.", name || 'there');
         bot.send(reply);
     } else {
         // delete their data
@@ -100,14 +100,14 @@ bot.dialog('/', [
     function(session) {
         // Send a greeting and show help.
         var card = new builder.HeroCard(session)
-            .title("Foresters Financial - (Preview POC state)")
-            .text("Foresters - wherever you are looking for help to support your queries for Foresters Financial")
+            .title("Microsoft CRM Bro")
+            .text("CRMBro - wherever you are looking for a buddy for CRM coding")
             .images([
                 builder.CardImage.create(session, "https://wnzuuw-sn3301.files.1drv.com/y3mm_WPWW4Py2qRPC0wv1Cvn2ST96Yku7sbHzLYsqlu5IXiqOsjOvtb68WNcBkdxHi7Q3Z569hai0VdlvFf05X9OzMl_fjImgsfd_wkpyp5WQA1KTtDXY_MHrOaBrav4Ptg-lNuSSZNtBRkV6sR93rWnkCVMJE2E1SUCHZFrNH0fOo?width=80&height=80&cropmode=none")
             ]);
         var msg = new builder.Message(session).attachments([card]);
         session.send(msg);
-        session.send("Hi There... I'm Foresters's bot for your Help. I can help you for most of your generic queries. If I am not able to help you, I can collect your query and do a call back for you.");
+        session.send("Hi There... I'm Sujith's bot for CRM Help. I can show you most of the generic code required for a CRM developer");
         session.beginDialog('/help');
     },
     function(session, results) {
@@ -122,7 +122,7 @@ bot.dialog('/', [
 
 bot.dialog('/menu', [
     function(session) {
-        builder.Prompts.choice(session, "What kind of support would you like to go for?", "Payments|Claims|Disbursements|Illustrations|IamAnAgent|Memberbenefits|ContactUS|(quit)");
+        builder.Prompts.choice(session, "What Code demo would you like to see?", "prompts|picture|cards|list|carousel|receipt|actions|(quit)");
     },
     function(session, results) {
         if (results.response && results.response.entity != '(quit)') {
@@ -145,60 +145,32 @@ bot.dialog('/help', [
     }
 ]);
 
-bot.dialog('/Payments', [
-
+bot.dialog('/prompts', [
     function(session) {
-        builder.Prompts.choice(session, "How do I?\n Pick an option.", "Change Bank Account|Billing Date|PAC|Get Loan|Claim|CancelPolicy|ContactUs");
+        session.send("Our Bot Builder SDK has a rich set of built-in prompts that simplify asking the user a series of questions. This demo will walk you through using each prompt. Just follow the prompts and you can quit at any time by saying 'cancel'.");
+        builder.Prompts.text(session, "Prompts.text()\n\nEnter some text and I'll say it back.");
     },
     function(session, results) {
-        session.send("You chose '%s' Here is the details of your question", results.response.entity);
-
-        var reply;
-        var response = results.response.entity;
-        switch (response) {
-            case 'Change Bank Account':
-                reply = "<b>Change Bank Account</b> For changing bank account you have to ......... ";
-                break;
-            case 'Billing Date':
-                reply = "<b>Billing Date</b> For Billing Data Change, ........... ";
-                break;
-            case 'PAC':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-            case 'Get Loan':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-            case 'Claim':
-                reply = "<b>PAC</b> For Claim................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-            case 'CancelPolicy':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-            case 'ContactUs':
-                var msg = new builder.Message(session)
-                    .textFormat(builder.TextFormat.xml)
-                    .attachments([
-                        new builder.HeroCard(session)
-                        .title("Hero Card")
-                        .subtitle("Space Needle")
-                        .text("The <b>Space Needle</b> is an observation tower in Seattle, Washington, a landmark of the Pacific Northwest, and an icon of Seattle.")
-                        .images([
-                            builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/320px-Seattlenighttimequeenanne.jpg")
-                        ])
-                        .buttons([
-                            builder.CardAction.dialogAction(session, "weather", "Seattle, WA", "Current Weather")
-                        ])
-                    ]);
-                session.send(msg);
-
-                //reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-
-        }
-        session.endDialog(reply);
-        // builder.Prompts.confirm(session, "Prompts.confirm()\n\nSimple yes/no questions are possible. Answer yes or no now.");
+        session.send("You entered '%s'", results.response);
+        builder.Prompts.number(session, "Prompts.number()\n\nNow enter a number.");
     },
-
+    function(session, results) {
+        session.send("You entered '%s'", results.response);
+        session.send("Bot Builder includes a rich choice() prompt that lets you offer a user a list choices to pick from. On Skype these choices by default surface using buttons if there are 3 or less choices. If there are more than 3 choices a numbered list will be used but you can specify the exact type of list to show using the ListStyle property.");
+        builder.Prompts.choice(session, "Prompts.choice()\n\nChoose a list style (the default is auto.)", "auto|inline|list|button|none");
+    },
+    function(session, results) {
+        var style = builder.ListStyle[results.response.entity];
+        builder.Prompts.choice(session, "Prompts.choice()\n\nNow pick an option.", "option A|option B|option C", { listStyle: style });
+    },
+    function(session, results) {
+        session.send("You chose '%s'", results.response.entity);
+        builder.Prompts.confirm(session, "Prompts.confirm()\n\nSimple yes/no questions are possible. Answer yes or no now.");
+    },
+    function(session, results) {
+        session.send("You chose '%s'", results.response ? 'yes' : 'no');
+        builder.Prompts.time(session, "Prompts.time()\n\nThe framework can recognize a range of times expressed as natural language. Enter a time like 'Monday at 7am' and I'll show you the JSON we return.");
+    },
     function(session, results) {
         session.send("Recognized Entity: %s", JSON.stringify(results.response));
         builder.Prompts.attachment(session, "Prompts.attachment()\n\nYour bot can wait on the user to upload an image or video. Send me an image and I'll send it back to you.");
@@ -213,34 +185,7 @@ bot.dialog('/Payments', [
     }
 ]);
 
-
-
-
-
-bot.dialog('/Claims', [
-
-    function(session) {
-        builder.Prompts.choice(session, "Select a Claim Type", "Claim1|Claim2|CancelPolicy");
-    },
-    function(session, results) {
-        session.send("You chose '%s' Here is the details of your question", results.response.entity);
-
-        var reply;
-        var response = results.response.entity;
-        switch (response) {
-
-            case 'MakeClaim':
-                reply = "<b>PAC</b> For Claim................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-            case 'CancelPolicy':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-                break;
-
-        }
-        session.endDialog(reply);
-    },
-
-
+bot.dialog('/picture', [
     function(session) {
         session.send("You can easily send pictures to a user...");
         var msg = new builder.Message(session)
@@ -303,7 +248,7 @@ bot.dialog('/cards', [
     }
 ]);
 
-bot.dialog('/Disbursements', [
+bot.dialog('/list', [
     function(session) {
         session.send("You can send the user a list of cards as multiple attachments in a single message...");
 
@@ -329,7 +274,7 @@ bot.dialog('/Disbursements', [
     }
 ]);
 
-bot.dialog('/Illustrations', [
+bot.dialog('/carousel', [
     function(session) {
         session.send("You can pass a custom message to Prompts.choice() that will present the user with a carousel of cards to select from. Each card can even support multiple actions.");
 
@@ -397,7 +342,7 @@ bot.dialog('/Illustrations', [
     }
 ]);
 
-bot.dialog('/AgentContact', [
+bot.dialog('/receipt', [
     function(session) {
         session.send("You can send a receipts for purchased good with both images and without...");
 
@@ -480,9 +425,9 @@ bot.dialog('/actions', [
 ]);
 
 // Create a dialog and bind it to a global action
-bot.dialog('/ConnectToForesters', [
+bot.dialog('/weather', [
     function(session, args) {
-        session.endDialog("Thank you to contact Foresters Financial in %s is 71 degrees and raining.", args.data);
+        session.endDialog("The weather in %s is 71 degrees and raining.", args.data);
     }
 ]);
 bot.beginDialogAction('weather', '/weather'); // <-- no 'matches' option means this can only be triggered by a button.
