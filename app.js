@@ -121,11 +121,69 @@ bot.dialog('/', [
 ]);
 
 bot.dialog('/menu', [
+    //function(session) {
+    //  builder.Prompts.choice(session, "What kind of support would you like to go for?", "Payments|Claims|Disbursements|Illustrations|IamAnAgent|Memberbenefits|ContactUS|(quit)");
+
+
+
+
+    // },
+
     function(session) {
-        builder.Prompts.choice(session, "What kind of support would you like to go for?", "Payments|Claims|Disbursements|Illustrations|IamAnAgent|Memberbenefits|ContactUS|(quit)");
+        //session.send("You can pass a custom message to Prompts.choice() that will present the user with a carousel of cards to select from. Each card can even support multiple actions.");
+
+        // Ask the user to select an item from a carousel.
+        var msg = new builder.Message(session)
+            .textFormat(builder.TextFormat.xml)
+            .attachmentLayout(builder.AttachmentLayout.carousel)
+            .attachments([
+                new builder.HeroCard(session)
+                .title("Payments")
+                .text("Payment Related Queries")
+                .images([
+                    builder.CardImage.create(session, "https://v9zyuw-sn3301.files.1drv.com/y3mE7EmeBZ6Ta_R5dierdYdLp5BtEEn5SB49lTROsZxsQBBS_wTggS2VpQgS1xQZyI86MC52a69zlJV-9pjrRDi3XImLTl84T_1v09Bk7dkyR9j2RccmdfjD-qTIoL3v-doPYkLBnP5qldaYR1lB7z6Oc5zEB78DPBTzrYsRvvMIFg?width=89&height=94&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://v9zyuw-sn3301.files.1drv.com/y3mE7EmeBZ6Ta_R5dierdYdLp5BtEEn5SB49lTROsZxsQBBS_wTggS2VpQgS1xQZyI86MC52a69zlJV-9pjrRDi3XImLTl84T_1v09Bk7dkyR9j2RccmdfjD-qTIoL3v-doPYkLBnP5qldaYR1lB7z6Oc5zEB78DPBTzrYsRvvMIFg?width=89&height=94&cropmode=none")),
+                ])
+                .buttons([
+                    // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Wikipedia"),
+                    builder.CardAction.imBack(session, "Payments", "Select")
+                ]),
+                new builder.HeroCard(session)
+                .title("Claims")
+                .text("<b>Claims</b> Claims related Queries")
+                .images([
+                    builder.CardImage.create(session, "https://v9zvuw-sn3301.files.1drv.com/y3mFgbroj_cV5AEPfvuHLoOpO5cCYDKAndBUn1h14vmI27i1d82fAoPGfuY6MjZSQlUXsVtXOrK28KLAJGw29vAWfc9yoANebp7yhID-K4nqtPgFTIuyD6FhRlmPww5yIy7oLKSxzTYWWssYlNYgase8EdeHILveI9Ywi9ZKG7nqy4?width=98&height=91&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://v9zvuw-sn3301.files.1drv.com/y3mFgbroj_cV5AEPfvuHLoOpO5cCYDKAndBUn1h14vmI27i1d82fAoPGfuY6MjZSQlUXsVtXOrK28KLAJGw29vAWfc9yoANebp7yhID-K4nqtPgFTIuyD6FhRlmPww5yIy7oLKSxzTYWWssYlNYgase8EdeHILveI9Ywi9ZKG7nqy4?width=98&height=91&cropmode=none")),
+                ])
+                .buttons([
+                    // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Pike_Place_Market", "Wikipedia"),
+                    builder.CardAction.imBack(session, "Claims", "Select")
+                ]),
+                new builder.HeroCard(session)
+                .title("Contact Us")
+                .text("<b>Foresters Financial </b> PO Box 179 Buffalo, NY 14201 Toll-Free Fax: 877 329 4631 \n Email:service@foresters.com")
+                .images([
+                    builder.CardImage.create(session, "https://wnzouw-sn3301.files.1drv.com/y3mT9AqmAqeXgSkNUaIOlFgkq9_fJ-c654C172n1AwUWeQfzdMmcLBP-JOtHLmrJaQCPTtBKNuyIsvPinxzJJxMG1NBpTgneKn-Ej4gAgGb4JMwaf1va2S1sozEKXZ-A9pQW-_pP4KW17_SKmxFwkTF_bK9VN_kgN1wk_vE7Zox9dg?width=94&height=94&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/PikePlaceMarket.jpg/800px-PikePlaceMarket.jpg")),
+                ])
+                .buttons([
+                    builder.CardAction.openUrl(session, "http://foresters.com", "Foresters.com"),
+                    builder.CardAction.imBack(session, "ContactUs", "More Details")
+                ]),
+                new builder.HeroCard(session)
+                 .images([
+                    builder.CardImage.create(session, "https://wnznuw-sn3301.files.1drv.com/y3mjUlQnXj3KQZo2Uu42sv6mcs3fkudi9TBj_FTnAETyFxma9SiVjROj5Vqqpqk7bcP2iUZnUK-_RR_VcKl-QRo0CNFKqoMJBXOHo7yW6z5Ui-z_szdnyFkcHmW3OHKb2iRv0zgUWyR3Z1J4l8W2v0Xv1rCyKsTkFT4SQiD0TBh--o?width=94&height=94&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Night_Exterior_EMP.jpg/800px-Night_Exterior_EMP.jpg"))
+                ])
+                .buttons([
+                    builder.CardAction.imBack(session, "Quit", "Quit")
+                ])
+            ]);
+        builder.Prompts.choice(session, msg, "Payments|Claims|ContactUs|Quit");
     },
+
     function(session, results) {
-        if (results.response && results.response.entity != '(quit)') {
+        if (results.response && results.response.entity != 'Quit') {
             // Launch demo dialog
             session.beginDialog('/' + results.response.entity);
         } else {
