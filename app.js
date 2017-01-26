@@ -90,8 +90,8 @@ bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i
 //=========================================================
 
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
-bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
+bot.beginDialogAction('help', '/help', { matches: /^help/i });
 //=========================================================
 // Bots Dialogs
 //=========================================================
@@ -123,10 +123,6 @@ bot.dialog('/', [
 bot.dialog('/menu', [
     //function(session) {
     //  builder.Prompts.choice(session, "What kind of support would you like to go for?", "Payments|Claims|Disbursements|Illustrations|IamAnAgent|Memberbenefits|ContactUS|(quit)");
-
-
-
-
     // },
 
     function(session) {
@@ -150,7 +146,7 @@ bot.dialog('/menu', [
                 ]),
                 new builder.HeroCard(session)
                 .title("Claims")
-                .text("<b>Claims</b> Claims related Queries")
+                .text("Claims related Queries")
                 .images([
                     builder.CardImage.create(session, "https://v9zvuw-sn3301.files.1drv.com/y3mFgbroj_cV5AEPfvuHLoOpO5cCYDKAndBUn1h14vmI27i1d82fAoPGfuY6MjZSQlUXsVtXOrK28KLAJGw29vAWfc9yoANebp7yhID-K4nqtPgFTIuyD6FhRlmPww5yIy7oLKSxzTYWWssYlNYgase8EdeHILveI9Ywi9ZKG7nqy4?width=98&height=91&cropmode=none")
                     .tap(builder.CardAction.showImage(session, "https://v9zvuw-sn3301.files.1drv.com/y3mFgbroj_cV5AEPfvuHLoOpO5cCYDKAndBUn1h14vmI27i1d82fAoPGfuY6MjZSQlUXsVtXOrK28KLAJGw29vAWfc9yoANebp7yhID-K4nqtPgFTIuyD6FhRlmPww5yIy7oLKSxzTYWWssYlNYgase8EdeHILveI9Ywi9ZKG7nqy4?width=98&height=91&cropmode=none")),
@@ -160,8 +156,8 @@ bot.dialog('/menu', [
                     builder.CardAction.imBack(session, "Claims", "Select")
                 ]),
                 new builder.HeroCard(session)
-                .title("Contact Us")
-                .text("<b>Foresters Financial </b> PO Box 179 Buffalo, NY 14201 Toll-Free Fax: 877 329 4631 \n Email:service@foresters.com")
+                .title("Foresters Financial")
+                .text("PO Box 179 Buffalo, NY 14201 Toll-Free Fax: 877 329 4631 \n Email:service@foresters.com")
                 .images([
                     builder.CardImage.create(session, "https://wnzouw-sn3301.files.1drv.com/y3mT9AqmAqeXgSkNUaIOlFgkq9_fJ-c654C172n1AwUWeQfzdMmcLBP-JOtHLmrJaQCPTtBKNuyIsvPinxzJJxMG1NBpTgneKn-Ej4gAgGb4JMwaf1va2S1sozEKXZ-A9pQW-_pP4KW17_SKmxFwkTF_bK9VN_kgN1wk_vE7Zox9dg?width=94&height=94&cropmode=none")
                     .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/PikePlaceMarket.jpg/800px-PikePlaceMarket.jpg")),
@@ -171,7 +167,7 @@ bot.dialog('/menu', [
                     builder.CardAction.imBack(session, "ContactUs", "More Details")
                 ]),
                 new builder.HeroCard(session)
-                 .images([
+                .images([
                     builder.CardImage.create(session, "https://wnznuw-sn3301.files.1drv.com/y3mjUlQnXj3KQZo2Uu42sv6mcs3fkudi9TBj_FTnAETyFxma9SiVjROj5Vqqpqk7bcP2iUZnUK-_RR_VcKl-QRo0CNFKqoMJBXOHo7yW6z5Ui-z_szdnyFkcHmW3OHKb2iRv0zgUWyR3Z1J4l8W2v0Xv1rCyKsTkFT4SQiD0TBh--o?width=94&height=94&cropmode=none")
                     .tap(builder.CardAction.showImage(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Night_Exterior_EMP.jpg/800px-Night_Exterior_EMP.jpg"))
                 ])
@@ -206,10 +202,10 @@ bot.dialog('/help', [
 bot.dialog('/Payments', [
 
     function(session) {
-        builder.Prompts.choice(session, "How do I?\n Pick an option.", "Change Bank Account|Billing Date|PAC|Get Loan|Claim|CancelPolicy|ContactUs");
+        builder.Prompts.choice(session, "How do I?", "Change Bank Account|Billing Date|PAC|Get Loan|Call Back Me");
     },
-    function(session, results) {
-        session.send("You chose '%s' Here is the details of your question", results.response.entity);
+    function(session, results, next) {
+        session.send("You chose '%s'", results.response.entity);
 
         var reply;
         var response = results.response.entity;
@@ -232,31 +228,38 @@ bot.dialog('/Payments', [
             case 'CancelPolicy':
                 reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
                 break;
-            case 'ContactUs':
-                var msg = new builder.Message(session)
-                    .textFormat(builder.TextFormat.xml)
-                    .attachments([
-                        new builder.HeroCard(session)
-                        .title("Hero Card")
-                        .subtitle("Space Needle")
-                        .text("The <b>Space Needle</b> is an observation tower in Seattle, Washington, a landmark of the Pacific Northwest, and an icon of Seattle.")
-                        .images([
-                            builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/320px-Seattlenighttimequeenanne.jpg")
-                        ])
-                        .buttons([
-                            builder.CardAction.dialogAction(session, "weather", "Seattle, WA", "Current Weather")
-                        ])
-                    ]);
-                session.send(msg);
 
-                //reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
+            case 'Call Back Me':
+                session.beginDialog('/GetCallBackInfo');
                 break;
 
+
+                //reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
+
+
         }
-        session.endDialog(reply);
+        session.send(reply);
+        next();
+        // "You chose '%s' Here is the details of your question", results.response.entity);
+
         // builder.Prompts.confirm(session, "Prompts.confirm()\n\nSimple yes/no questions are possible. Answer yes or no now.");
     },
+    function(session, results, next) {
+        builder.Prompts.choice(session, "Are you looking any more information from me?", "Yes|No");
+    },
+    function(session, results) {
+        var response = results.response.entity;
+        switch (response) {
+            case 'Yes':
+                session.endDialog("Please select a option");
+                break;
 
+            case 'No':
+                session.endConversation('Thank you for Contacting us. Have a great Day!')
+                break;
+        }
+        //session.endDialog(reply);
+    },
     function(session, results) {
         session.send("Recognized Entity: %s", JSON.stringify(results.response));
         builder.Prompts.attachment(session, "Prompts.attachment()\n\nYour bot can wait on the user to upload an image or video. Send me an image and I'll send it back to you.");
@@ -278,10 +281,10 @@ bot.dialog('/Payments', [
 bot.dialog('/Claims', [
 
     function(session) {
-        builder.Prompts.choice(session, "Select a Claim Type", "Claim1|Claim2|CancelPolicy");
+        builder.Prompts.choice(session, "Select a Claim Type", "MakeClaim|CancelPolicy|Call Back Me");
     },
-    function(session, results) {
-        session.send("You chose '%s' Here is the details of your question", results.response.entity);
+    function(session, results, next) {
+        session.send("You chose '%s'", results.response.entity);
 
         var reply;
         var response = results.response.entity;
@@ -293,11 +296,31 @@ bot.dialog('/Claims', [
             case 'CancelPolicy':
                 reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
                 break;
+            case 'Call Back Me':
+                session.beginDialog('/GetCallBackInfo');
+                break;
 
         }
-        session.endDialog(reply);
+        session.send(reply);
+        next();
     },
+    function(session, results, next) {
+        builder.Prompts.choice(session, "Are you looking any more information from me?", "Yes|No");
+        //next();
+    },
+    function(session, results) {
 
+        var response = results.response.entity;
+        switch (response) {
+            case 'Yes':
+                session.endDialog("Please select a option");
+                break;
+            case 'No':
+                session.replaceDialog('/Quit');
+                break;
+        }
+        //session.endDialog(reply);
+    },
 
     function(session) {
         session.send("You can easily send pictures to a user...");
@@ -557,36 +580,34 @@ bot.beginDialogAction('weather', '/weather'); // <-- no 'matches' option means t
 
 
 
-/*
 
-bot.dialog('/', [
+bot.dialog('/GetCallBackInfo', [
     function(session) {
-        session.send("Hello There,");
+        //session.send("Hello There,");
         session.beginDialog('/ensureProfile', session.userData.profile);
     },
     function(session, results) {
 
         session.userData.profile = results.response;
         session.send('Hi ' + session.userData.profile.name +
-            ' Thanks for your information. we are processing your request and contact you soon.'
+            ' Thanks for your information. we have recorded your message in our system. One of our representative will call you back soon to serve you.'
         );
-        /* var thumbnail=new builder.ThumbnailCard(session);
-        thumbnail.title=session.userData.name;
-        thumbnail.subtitle=session.userData.company;
-        thumbnail.text=session.userData.State.entity;
-        thumbnail.ta*/
-/*
+        /*
+        var thumbnail = new builder.ThumbnailCard(session);
+        thumbnail.title = session.userData.name;
+        thumbnail.subtitle = session.userData.company;
+        thumbnail.text = session.userData.State.entity;*/
+
+
     }
 ]);
-*/
-/*
+
 bot.dialog('/ensureProfile', [
     function(session, args, next) {
         session.dialogData.profile = args || {};
 
         if (session.dialogData.profile.name === undefined || session.dialogData.profile.name === null) {
             builder.Prompts.text(session, 'What is your Name?');
-
         } else {
             next();
         }
@@ -595,8 +616,8 @@ bot.dialog('/ensureProfile', [
         if (results.response) {
             session.dialogData.profile.name = results.response;
         }
-        if (session.dialogData.profile.company === undefined || session.dialogData.profile.company === null) {
-            builder.Prompts.text(session, 'What is you Cert no?');
+        if (session.dialogData.profile.CertificateNo === undefined || session.dialogData.profile.CertificateNo === null) {
+            builder.Prompts.text(session, 'What is your Certificate Number?');
         } else {
             next();
         }
@@ -604,13 +625,29 @@ bot.dialog('/ensureProfile', [
     },
     function(session, results, next) {
         if (results.response) {
-            session.dialogData.profile.company = results.response;
+            session.dialogData.profile.CertificateNo = results.response;
 
         }
-        if (session.dialogData.profile.State === undefined || session.dialogData.profile.State === null) {
-            var states = ['A', 'B', 'C', 'D', 'E'];
-            builder.Prompts.choice(session, 'What kind of support are you looking from me?', states);
+        if (session.dialogData.profile.PhoneNumber === undefined || session.dialogData.profile.PhoneNumber === null) {
+            builder.Prompts.text(session, 'Please share your contact number to call you back?');
         } else {
+            // builder.send(session, 'We will contact you on %s', session.dialogData.profile.PhoneNumber);
+            next();
+        }
+        //session.endDialogWithResult({ response: session.dialogData.profile });
+
+    },
+    function(session, results, next) {
+        if (results.response) {
+            session.dialogData.profile.PhoneNumber = results.response;
+            // session.dialogData.profile.Query = null;
+        }
+        if (session.dialogData.profile.Query === undefined || session.dialogData.profile.Query === null) {
+            builder.Prompts.text(session, 'Please share your Query which will help us to serve you better');
+
+        } else {
+            //  session.dialogData.profile.Query = null;
+            //builder.Prompts.text(session, 'Please share your Query which will help us to serve you better');
             next();
         }
         //session.endDialogWithResult({ response: session.dialogData.profile });
@@ -618,11 +655,10 @@ bot.dialog('/ensureProfile', [
     },
     function(session, results) {
         if (results.response) {
-            session.dialogData.profile.State = results.response;
+            session.dialogData.profile.Query = results.response;
         }
         session.endDialogWithResult({
             response: session.dialogData.profile
         });
     }
 ]);
-*/
