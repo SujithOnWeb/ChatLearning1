@@ -589,9 +589,11 @@ bot.dialog('/GetCallBackInfo', [
     function(session, results) {
 
         session.userData.profile = results.response;
-        session.send('Hi ' + session.userData.profile.name +
+        session.endConversation('Hi ' + session.userData.profile.name +
             ' Thanks for your information. we have recorded your message in our system. One of our representative will call you back soon to serve you.'
         );
+
+
         /*
         var thumbnail = new builder.ThumbnailCard(session);
         thumbnail.title = session.userData.name;
