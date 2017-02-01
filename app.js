@@ -2,6 +2,9 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var http = require('http');
 
+var appInsights = require("applicationinsights");
+appInsights.setup("7df6208e-d791-401d-aea0-5a04439433e8").start();
+
 //=========================================================
 // Bot Setup
 //=========================================================
