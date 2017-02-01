@@ -1,5 +1,6 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+var http = require('http');
 
 //=========================================================
 // Bot Setup
@@ -204,8 +205,8 @@ bot.dialog('/Payments', [
     function(session) {
         builder.Prompts.choice(session, "How do I?", "Change Bank Account|Billing Date|PAC|Get Loan|Call Back Me");
     },
-    function(session, results, next) {
-        session.send("You chose '%s'", results.response.entity);
+    function(session, results, next1) {
+        //session.send("You chose '%s'", results.response.entity);
 
         var reply;
         var response = results.response.entity;
@@ -239,12 +240,12 @@ bot.dialog('/Payments', [
 
         }
         session.send(reply);
-        next();
+        next1();
         // "You chose '%s' Here is the details of your question", results.response.entity);
 
         // builder.Prompts.confirm(session, "Prompts.confirm()\n\nSimple yes/no questions are possible. Answer yes or no now.");
     },
-    function(session, results, next) {
+    function(session, results, next1) {
         builder.Prompts.choice(session, "Are you looking any more information from me?", "Yes|No");
     },
     function(session, results) {
@@ -283,7 +284,7 @@ bot.dialog('/Claims', [
     function(session) {
         builder.Prompts.choice(session, "Select a Claim Type", "MakeClaim|CancelPolicy|Call Back Me");
     },
-    function(session, results, next) {
+    function(session, results, next2) {
         session.send("You chose '%s'", results.response.entity);
 
         var reply;
@@ -302,9 +303,9 @@ bot.dialog('/Claims', [
 
         }
         session.send(reply);
-        next();
+        next2();
     },
-    function(session, results, next) {
+    function(session, results, next2) {
         builder.Prompts.choice(session, "Are you looking any more information from me?", "Yes|No");
         //next();
     },
@@ -589,10 +590,30 @@ bot.dialog('/GetCallBackInfo', [
     function(session, results) {
 
         session.userData.profile = results.response;
-        session.endConversation('Hi ' + session.userData.profile.name +
-            ' Thanks for your information. we have recorded your message in our system. One of our representative will call you back soon to serve you.'
-        );
 
+
+        var options = {
+            host: 'servicetocrmbro.azurewebsites.net',
+            //port: 80,
+            path: '/api/CRM/' + session.userData.profile.name1,
+            method: 'Get'
+        };
+
+        http.request(options, function(res) {
+            console.log('STATUS: ' + res.statusCode);
+            console.log('HEADERS: ' + JSON.stringify(res.headers));
+            res.setEncoding('utf8');
+            res.on('data', function(chunk) {
+
+                session.endConversation('Hi ' + session.userData.profile.name1 +
+                    ' Thanks for your information. we have recorded your message in our system. One of our representative will call you back soon to serve you. Here is you referance no:' + chunk
+                );
+
+                console.log('BODY: ' + chunk);
+            });
+        }).end();
+
+        session.endConversation("Request is Processing... Please wait...");
 
         /*
         var thumbnail = new builder.ThumbnailCard(session);
@@ -608,15 +629,23 @@ bot.dialog('/ensureProfile', [
     function(session, args, next) {
         session.dialogData.profile = args || {};
 
-        if (session.dialogData.profile.name === undefined || session.dialogData.profile.name === null) {
-            builder.Prompts.text(session, 'What is your Name?');
+        if (session.dialogData.profile.name1 === undefined || session.dialogData.profile.name1 === null) {
+            builder.Prompts.text(session, 'Please provide Below Informations....');
+        } else {
+            next();
+        }
+    },
+    function(session, results, next) {
+
+        if (session.dialogData.profile.name1 === undefined || session.dialogData.profile.name1 === null) {
+            builder.Prompts.text(session, 'What is your Name 1?');
         } else {
             next();
         }
     },
     function(session, results, next) {
         if (results.response) {
-            session.dialogData.profile.name = results.response;
+            session.dialogData.profile.name1 = results.response;
         }
         if (session.dialogData.profile.CertificateNo === undefined || session.dialogData.profile.CertificateNo === null) {
             builder.Prompts.text(session, 'What is your Certificate Number?');
