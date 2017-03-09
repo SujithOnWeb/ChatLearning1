@@ -186,8 +186,8 @@ bot.dialog('/menu', [
                 // .text("Payment Related Queries")
                 .images([
                     // builder.CardImage.create(session, "https://v9zyuw-sn3301.files.1drv.com/y3mE7EmeBZ6Ta_R5dierdYdLp5BtEEn5SB49lTROsZxsQBBS_wTggS2VpQgS1xQZyI86MC52a69zlJV-9pjrRDi3XImLTl84T_1v09Bk7dkyR9j2RccmdfjD-qTIoL3v-doPYkLBnP5qldaYR1lB7z6Oc5zEB78DPBTzrYsRvvMIFg?width=89&height=94&cropmode=none")
-                    builder.CardImage.create(session, "https://utztuw-sn3301.files.1drv.com/y3mi6Tn-WOcVwDhAhB662gHaN03goWZ-5vu7_1_CEI0HWGFNaigsuuQCGzCLqQrFRbJcs5V8WPowB6mj8pG7zBbYdYkKDzOZw5UtPqlJ1LDyFRvszy5VYqy9rWz1a3eqwimyyUJDactQEOOsgR03Z9dRW1xKj3ZLweXaQo3q8batMQ?width=190&height=316&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utztuw-sn3301.files.1drv.com/y3mi6Tn-WOcVwDhAhB662gHaN03goWZ-5vu7_1_CEI0HWGFNaigsuuQCGzCLqQrFRbJcs5V8WPowB6mj8pG7zBbYdYkKDzOZw5UtPqlJ1LDyFRvszy5VYqy9rWz1a3eqwimyyUJDactQEOOsgR03Z9dRW1xKj3ZLweXaQo3q8batMQ?width=190&height=316&cropmode=none")),
+                    builder.CardImage.create(session, "https://utztuw-sn3301.files.1drv.com/y3mrq3YdHk56tLUwITihJ0eOjnL0GSoW2yGRTJOQo497qFkzSGzdgM0DyBieuCg-EjNzzXyQydISVuN2_PB7D4NdW3VNOWLxZS9AfWVlkK7rkxmk2zVMXJ2ucKtaUyXxDx7q1E_RWpGIdxjCFYvu4uhIzPr8DNGlEo0pZxFo-d2blk?width=192&height=128&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://utztuw-sn3301.files.1drv.com/y3mrq3YdHk56tLUwITihJ0eOjnL0GSoW2yGRTJOQo497qFkzSGzdgM0DyBieuCg-EjNzzXyQydISVuN2_PB7D4NdW3VNOWLxZS9AfWVlkK7rkxmk2zVMXJ2ucKtaUyXxDx7q1E_RWpGIdxjCFYvu4uhIzPr8DNGlEo0pZxFo-d2blk?width=192&height=128&cropmode=none")),
                 ])
                 .buttons([
                     // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Wikipedia"),
@@ -196,8 +196,8 @@ bot.dialog('/menu', [
                 new builder.HeroCard(session)
                 //.text("Claims related Queries")
                 .images([
-                    builder.CardImage.create(session, "https://utzouw-sn3301.files.1drv.com/y3mLrnhds-5-hob-6YX7HZqluiQjlwYKldGBOpKD6opXZ3rPkYd9AC1-8N09zwDtTUY3neqMUBaUkHr7qjSmOwCwVuTUgQ8bQ2O6b76V4XKgINb76THVqZaqGYnCmWvLOMSkveKYP9gaHqo8LoPdGPIbvSoOzbjnLhEGupajMMsD2M?width=194&height=185&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utzouw-sn3301.files.1drv.com/y3mLrnhds-5-hob-6YX7HZqluiQjlwYKldGBOpKD6opXZ3rPkYd9AC1-8N09zwDtTUY3neqMUBaUkHr7qjSmOwCwVuTUgQ8bQ2O6b76V4XKgINb76THVqZaqGYnCmWvLOMSkveKYP9gaHqo8LoPdGPIbvSoOzbjnLhEGupajMMsD2M?width=194&height=185&cropmode=none")),
+                    builder.CardImage.create(session, "https://utzouw-sn3301.files.1drv.com/y3mTi0HjNd5AIelsCRp0VDT77uTiL9U7FSEOiwYCMoXqTwjgTDp9gGGsafLEwZfDI8xnbkzeFFqjmCrshCRyItzTK9AoB0ZMZlxJdPsF_SCFpOuZwUAxWROIdXezpTBLdFngFP-k3PzNTSYQ6V0t_6gmUCZUQNuQcrQm8MUVU0iRIk?width=187&height=128&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://utzouw-sn3301.files.1drv.com/y3mTi0HjNd5AIelsCRp0VDT77uTiL9U7FSEOiwYCMoXqTwjgTDp9gGGsafLEwZfDI8xnbkzeFFqjmCrshCRyItzTK9AoB0ZMZlxJdPsF_SCFpOuZwUAxWROIdXezpTBLdFngFP-k3PzNTSYQ6V0t_6gmUCZUQNuQcrQm8MUVU0iRIk?width=187&height=128&cropmode=none")),
                 ])
                 .buttons([
                     // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Pike_Place_Market", "Wikipedia"),
