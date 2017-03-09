@@ -196,8 +196,8 @@ bot.dialog('/menu', [
                 new builder.HeroCard(session)
                 //.text("Claims related Queries")
                 .images([
-                    builder.CardImage.create(session, "https://utzouw.dm2304.livefilestore.com/y3mj0YRpsYEjWZ21JxsoOwT4oF4yYJF4pCJkAFX019j-yI3oyomhWm89etebe24WvV9_FTCSnb2MYfA9f0CRyJCVtHTdGUjHVMnCsdEhH1SmFYVeeV_wl1wVl3bZkCbKGJRxxldLEppp6X2WUXdCrC8-y8e-oA7Ez2FcFizhW1Hqj4?width=192&height=316&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utzouw.dm2304.livefilestore.com/y3mj0YRpsYEjWZ21JxsoOwT4oF4yYJF4pCJkAFX019j-yI3oyomhWm89etebe24WvV9_FTCSnb2MYfA9f0CRyJCVtHTdGUjHVMnCsdEhH1SmFYVeeV_wl1wVl3bZkCbKGJRxxldLEppp6X2WUXdCrC8-y8e-oA7Ez2FcFizhW1Hqj4?width=192&height=316&cropmode=none")),
+                    builder.CardImage.create(session, "https://utzouw-sn3301.files.1drv.com/y3mLrnhds-5-hob-6YX7HZqluiQjlwYKldGBOpKD6opXZ3rPkYd9AC1-8N09zwDtTUY3neqMUBaUkHr7qjSmOwCwVuTUgQ8bQ2O6b76V4XKgINb76THVqZaqGYnCmWvLOMSkveKYP9gaHqo8LoPdGPIbvSoOzbjnLhEGupajMMsD2M?width=194&height=185&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://utzouw-sn3301.files.1drv.com/y3mLrnhds-5-hob-6YX7HZqluiQjlwYKldGBOpKD6opXZ3rPkYd9AC1-8N09zwDtTUY3neqMUBaUkHr7qjSmOwCwVuTUgQ8bQ2O6b76V4XKgINb76THVqZaqGYnCmWvLOMSkveKYP9gaHqo8LoPdGPIbvSoOzbjnLhEGupajMMsD2M?width=194&height=185&cropmode=none")),
                 ])
                 .buttons([
                     // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Pike_Place_Market", "Wikipedia"),
