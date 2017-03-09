@@ -207,8 +207,8 @@ bot.dialog('/menu', [
                 // .title("Foresters Financial")
                 // .text("PO Box 179 Buffalo, NY 14201 Toll-Free Fax: 877 329 4631 \n Email:service@foresters.com")
                 .images([
-                    builder.CardImage.create(session, "https://utznuw-sn3301.files.1drv.com/y3mFK8iku_ARXDVSq9z8axr4blwWiqgkiJ9TtQ85r5dRuG3CNY1ZPR44LEmfDyjkk1hroj8GVCqDyhJnFvLjp2szTxeXs5QVT9fzrVwC4wYXwps137JFVwLcjALgutp9VLhRqVVC9nxd5bN6AWOjgcgeTHGjFz9HFew0gucTCo2NYM?width=155&height=256&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utznuw-sn3301.files.1drv.com/y3mFK8iku_ARXDVSq9z8axr4blwWiqgkiJ9TtQ85r5dRuG3CNY1ZPR44LEmfDyjkk1hroj8GVCqDyhJnFvLjp2szTxeXs5QVT9fzrVwC4wYXwps137JFVwLcjALgutp9VLhRqVVC9nxd5bN6AWOjgcgeTHGjFz9HFew0gucTCo2NYM?width=155&height=256&cropmode=none")),
+                    builder.CardImage.create(session, "https://utznuw-sn3301.files.1drv.com/y3mckX6xNf8nWT7uZibn7AbkB13TBwIFnO0-uQcYA3ToJxss7Pdx74RPxMIXs5ybMvmwC-MpRmnJsCWkFmoVcMVgcT8SB-bzjHYj-hqW1G0i_-UpZEHN8SXcIlVYTV7Zr1J-heGgsEK-N7vfpFoH8id6Te7cpf7_G4NTQ2ukgtEZ4Q?width=185&height=128&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://utznuw-sn3301.files.1drv.com/y3mckX6xNf8nWT7uZibn7AbkB13TBwIFnO0-uQcYA3ToJxss7Pdx74RPxMIXs5ybMvmwC-MpRmnJsCWkFmoVcMVgcT8SB-bzjHYj-hqW1G0i_-UpZEHN8SXcIlVYTV7Zr1J-heGgsEK-N7vfpFoH8id6Te7cpf7_G4NTQ2ukgtEZ4Q?width=185&height=128&cropmode=none")),
                 ])
                 .buttons([
                     builder.CardAction.openUrl(session, "http://foresters.com", "Foresters.com"),
@@ -218,8 +218,8 @@ bot.dialog('/menu', [
                 //.text("Other")
                 .images([
                     // builder.CardImage.create(session, "https://v9zyuw-sn3301.files.1drv.com/y3mE7EmeBZ6Ta_R5dierdYdLp5BtEEn5SB49lTROsZxsQBBS_wTggS2VpQgS1xQZyI86MC52a69zlJV-9pjrRDi3XImLTl84T_1v09Bk7dkyR9j2RccmdfjD-qTIoL3v-doPYkLBnP5qldaYR1lB7z6Oc5zEB78DPBTzrYsRvvMIFg?width=89&height=94&cropmode=none")
-                    builder.CardImage.create(session, "https://utztuw-sn3301.files.1drv.com/y3mi6Tn-WOcVwDhAhB662gHaN03goWZ-5vu7_1_CEI0HWGFNaigsuuQCGzCLqQrFRbJcs5V8WPowB6mj8pG7zBbYdYkKDzOZw5UtPqlJ1LDyFRvszy5VYqy9rWz1a3eqwimyyUJDactQEOOsgR03Z9dRW1xKj3ZLweXaQo3q8batMQ?width=190&height=316&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utztuw-sn3301.files.1drv.com/y3mi6Tn-WOcVwDhAhB662gHaN03goWZ-5vu7_1_CEI0HWGFNaigsuuQCGzCLqQrFRbJcs5V8WPowB6mj8pG7zBbYdYkKDzOZw5UtPqlJ1LDyFRvszy5VYqy9rWz1a3eqwimyyUJDactQEOOsgR03Z9dRW1xKj3ZLweXaQo3q8batMQ?width=190&height=316&cropmode=none")),
+                    builder.CardImage.create(session, "https://utznuw-sn3301.files.1drv.com/y3mckX6xNf8nWT7uZibn7AbkB13TBwIFnO0-uQcYA3ToJxss7Pdx74RPxMIXs5ybMvmwC-MpRmnJsCWkFmoVcMVgcT8SB-bzjHYj-hqW1G0i_-UpZEHN8SXcIlVYTV7Zr1J-heGgsEK-N7vfpFoH8id6Te7cpf7_G4NTQ2ukgtEZ4Q?width=185&height=128&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://utznuw-sn3301.files.1drv.com/y3mckX6xNf8nWT7uZibn7AbkB13TBwIFnO0-uQcYA3ToJxss7Pdx74RPxMIXs5ybMvmwC-MpRmnJsCWkFmoVcMVgcT8SB-bzjHYj-hqW1G0i_-UpZEHN8SXcIlVYTV7Zr1J-heGgsEK-N7vfpFoH8id6Te7cpf7_G4NTQ2ukgtEZ4Q?width=185&height=128&cropmode=none")),
                 ])
                 .buttons([
                     // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Wikipedia"),
@@ -227,8 +227,8 @@ bot.dialog('/menu', [
                 ]),
                 new builder.HeroCard(session)
                 .images([
-                    builder.CardImage.create(session, "https://udzwuw.dm1.livefilestore.com/y3mQkd-GvaBML-U7lPYLODtKpqDnH3px4t3vEFYpN3iTUDFmUnn4L237-wRWZEq59yN5lNFJbsJHUQ5wgTQUobIziyytMDR0OqjDPdQLYSUmp0wkfNcswqoVMsyJR7psvOMPLgjylLzbVTM2f5MyKfihB00PoeH3MZceYGQmAOV4s8?width=192&height=317&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://udzwuw.dm1.livefilestore.com/y3mQkd-GvaBML-U7lPYLODtKpqDnH3px4t3vEFYpN3iTUDFmUnn4L237-wRWZEq59yN5lNFJbsJHUQ5wgTQUobIziyytMDR0OqjDPdQLYSUmp0wkfNcswqoVMsyJR7psvOMPLgjylLzbVTM2f5MyKfihB00PoeH3MZceYGQmAOV4s8?width=192&height=317&cropmode=none"))
+                    builder.CardImage.create(session, "https://udzwuw-sn3301.files.1drv.com/y3mLWEz_fg478YQ69FT8A5tM3QuzKkJHW26GLX1p3k0NQrZDynXXNri1zyVRhRq0SHEs1NNyu2iT1UK3bhKnsaYF4wZSMiDjnqh4F9ppsONHMn_OKydvDEAqnc4Btbe7sUL5cAA6elX_b9yejEHLFY2JImB9cdaewCaeZzfsxJa4IM?width=185&height=128&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://udzwuw-sn3301.files.1drv.com/y3mLWEz_fg478YQ69FT8A5tM3QuzKkJHW26GLX1p3k0NQrZDynXXNri1zyVRhRq0SHEs1NNyu2iT1UK3bhKnsaYF4wZSMiDjnqh4F9ppsONHMn_OKydvDEAqnc4Btbe7sUL5cAA6elX_b9yejEHLFY2JImB9cdaewCaeZzfsxJa4IM?width=185&height=128&cropmode=none"))
                 ])
                 .buttons([
                     builder.CardAction.imBack(session, "Quit", "Quit")
