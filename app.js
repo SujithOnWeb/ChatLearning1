@@ -207,8 +207,8 @@ bot.dialog('/menu', [
                 // .title("Foresters Financial")
                 // .text("PO Box 179 Buffalo, NY 14201 Toll-Free Fax: 877 329 4631 \n Email:service@foresters.com")
                 .images([
-                    builder.CardImage.create(session, "https://utznuw-sn3301.files.1drv.com/y3mFK8iku_ARXDVSq9z8axr4blwWiqgkiJ9TtQ85r5dRuG3CNY1ZPR44LEmfDyjkk1hroj8GVCqDyhJnFvLjp2szTxeXs5QVT9fzrVwC4wYXwps137JFVwLcjALgutp9VLhRqVVC9nxd5bN6AWOjgcgeTHGjFz9HFew0gucTCo2NYM?width=192&height=317&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utznuw-sn3301.files.1drv.com/y3mFK8iku_ARXDVSq9z8axr4blwWiqgkiJ9TtQ85r5dRuG3CNY1ZPR44LEmfDyjkk1hroj8GVCqDyhJnFvLjp2szTxeXs5QVT9fzrVwC4wYXwps137JFVwLcjALgutp9VLhRqVVC9nxd5bN6AWOjgcgeTHGjFz9HFew0gucTCo2NYM?width=192&height=317&cropmode=none")),
+                    builder.CardImage.create(session, "https://utznuw-sn3301.files.1drv.com/y3mFK8iku_ARXDVSq9z8axr4blwWiqgkiJ9TtQ85r5dRuG3CNY1ZPR44LEmfDyjkk1hroj8GVCqDyhJnFvLjp2szTxeXs5QVT9fzrVwC4wYXwps137JFVwLcjALgutp9VLhRqVVC9nxd5bN6AWOjgcgeTHGjFz9HFew0gucTCo2NYM?width=155&height=256&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://utznuw-sn3301.files.1drv.com/y3mFK8iku_ARXDVSq9z8axr4blwWiqgkiJ9TtQ85r5dRuG3CNY1ZPR44LEmfDyjkk1hroj8GVCqDyhJnFvLjp2szTxeXs5QVT9fzrVwC4wYXwps137JFVwLcjALgutp9VLhRqVVC9nxd5bN6AWOjgcgeTHGjFz9HFew0gucTCo2NYM?width=155&height=256&cropmode=none")),
                 ])
                 .buttons([
                     builder.CardAction.openUrl(session, "http://foresters.com", "Foresters.com"),
