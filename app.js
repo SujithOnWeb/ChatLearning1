@@ -3,8 +3,8 @@ var builder = require('botbuilder');
 //var builder = require('../../core/');
 var http = require('http');
 
-var appInsights = require("applicationinsights");
-appInsights.setup("7df6208e-d791-401d-aea0-5a04439433e8").start();
+//var appInsights = require("applicationinsights");
+//appInsights.setup("7df6208e-d791-401d-aea0-5a04439433e8").start();
 
 //=========================================================
 // Bot Setup
@@ -95,7 +95,7 @@ bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i
 // Bots Global Actions
 //=========================================================
 
-bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
+bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^bye/i });
 
 bot.beginDialogAction('help', '/help', { matches: /^help/i });
 //=========================================================
@@ -234,7 +234,7 @@ bot.dialog('/menu', [
                     builder.CardAction.imBack(session, "Quit", "Quit")
                 ])
             ]);
-        builder.Prompts.choice(session, msg, "Payments|Claims|ContactUs|Quit");
+        builder.Prompts.choice(session, msg, "Payments|Claims|ContactUs|AiSample|Quit");
     },
 
     function(session, results) {
@@ -270,7 +270,13 @@ bot.dialog('/Payments', [
         var response = results.response.entity;
         switch (response) {
             case 'Change Bank Account':
-                reply = "<b>Change Bank Account</b> For changing bank account you have to ......... ";
+
+                reply1 = "<b>Change Bank Account</b> To change your banking information, mail or fax a letter along with preautherized checking(PAC) to Foresters Financial";
+                session.send(reply1);
+                session.sendTyping();
+
+                session.beginDialog('/BankingAddressChange');
+
                 break;
             case 'Billing Date':
                 reply = "<b>Billing Date</b> For Billing Data Change, ........... ";
@@ -297,7 +303,7 @@ bot.dialog('/Payments', [
 
 
         }
-        session.send(reply);
+        //session.send(reply);
         next1();
         // "You chose '%s' Here is the details of your question", results.response.entity);
 
@@ -333,8 +339,54 @@ bot.dialog('/Payments', [
     }
 ]);
 
+/* Payment related Queries */
+bot.dialog('/BankingAddressChange', [
 
+    function(session) {
+        builder.Prompts.choice(session, "I am wondering, you would be able to download the form from this location http://google.com", "Yes|No");
+    },
 
+    function(session, results) {
+        if (results.response) {
+            var res = results.response.entity;
+            switch (res) {
+                case "Yes":
+                    session.send("If you are looking for any help to fill the form, you can get it fro here http://forersters.com/PACformfillingsupport.html");
+                    session.endDialog();
+                    break;
+
+                case "No":
+                    session.beginDialog('/BACFormFill');
+                    break;
+            }
+
+        }
+
+    }
+]);
+bot.dialog('/BACFormFill', [
+
+    function(session) {
+        builder.Prompts.choice(session, "Do you want us to send this form as a mail to your mailing address?", "Yes|No");
+    },
+    function(session, results) {
+        if (results.response) {
+            var res = results.response.entity;
+            switch (res) {
+                case "Yes":
+                    session.send("Ok We will send it within 2 working days");
+                    session.send("By the way, if you would like to update your mailing adress you can do it through our call center");
+                    break;
+                case "No":
+                    session.send("Ok");
+                    break;
+            }
+        }
+        session.endDialog();
+    }
+]);
+
+/* Payment related Queries */
 
 
 bot.dialog('/Claims', [
