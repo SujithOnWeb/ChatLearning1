@@ -271,42 +271,46 @@ bot.dialog('/Payments', [
         switch (response) {
             case 'Change Bank Account':
 
-                reply1 = "<b>Change Bank Account</b> To change your banking information, mail or fax a letter along with preautherized checking(PAC) to Foresters Financial";
+                reply1 = "Change Bank Account: To change your banking information, mail or fax a letter along with preautherized checking(PAC) to Foresters Financial";
                 session.send(reply1);
                 session.sendTyping();
 
-                session.beginDialog('/BankingAddressChange');
+
 
                 break;
             case 'Billing Date':
-                reply = "<b>Billing Date</b> For Billing Data Change, ........... ";
+                reply = "Billing Date: For Billing Data Change, ........... ";
                 break;
             case 'PAC':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
+                reply = "PAC For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
                 break;
             case 'Get Loan':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
+                reply = "Loan: For Loan................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
                 break;
             case 'Claim':
-                reply = "<b>PAC</b> For Claim................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
+                reply = "Claim: For Claim................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
                 break;
             case 'CancelPolicy':
-                reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
+                reply = "Cancel Policy: For canceling the policy............... .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
                 break;
 
             case 'Call Back Me':
                 session.beginDialog('/GetCallBackInfo');
                 break;
 
+        }
+        session.send(reply);
 
-                //reply = "<b>PAC</b> For PAC................ .................... ................................ ..................... .,,,,,,,,,,,,,,,,,, ";
-
+        switch (response) {
+            case 'Change Bank Account':
+                session.beginDialog('/BankingAddressChange');
+                break;
 
         }
-        //session.send(reply);
+
+
         next1();
         // "You chose '%s' Here is the details of your question", results.response.entity);
-
         // builder.Prompts.confirm(session, "Prompts.confirm()\n\nSimple yes/no questions are possible. Answer yes or no now.");
     },
     function(session, results, next1) {
@@ -343,7 +347,7 @@ bot.dialog('/Payments', [
 bot.dialog('/BankingAddressChange', [
 
     function(session) {
-        builder.Prompts.choice(session, "I am wondering, you would be able to download the form from this location http://google.com", "Yes|No");
+        builder.Prompts.choice(session, "Here is the form <a href='http://www.foresters.com/-/media/foresters/documents/pdfs/us/customer-care/foresters-financial/fliac-insurance/address-change.pdf?la=en'>Address Change Request Form</a>", "Yes|No");
     },
 
     function(session, results) {
@@ -351,7 +355,7 @@ bot.dialog('/BankingAddressChange', [
             var res = results.response.entity;
             switch (res) {
                 case "Yes":
-                    session.send("If you are looking for any help to fill the form, you can get it fro here http://forersters.com/PACformfillingsupport.html");
+                    session.send("If you are looking for any help to fill the form, you can get it fro here <a href='http://www.foresters.com/-/media/foresters/documents/pdfs/us/customer-care/foresters-financial/fliac-insurance/address-change-form-instructions.pdf?la=en'>Form Instructions</a>");
                     session.endDialog();
                     break;
 
@@ -748,7 +752,7 @@ bot.dialog('/ensureProfile', [
     function(session, results, next) {
 
         if (session.dialogData.profile.name1 === undefined || session.dialogData.profile.name1 === null) {
-            builder.Prompts.text(session, 'What is your Name 1?');
+            builder.Prompts.text(session, 'What is your Name?');
         } else {
             next();
         }
