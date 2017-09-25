@@ -1,10 +1,25 @@
 {
-  "name": "SujithSampleBotinNode",
+  "name": "foresterspoc",
   "version": "1.0.0",
   "description": "This sample is created in Node",
   "dependencies": {
     "applicationinsights": "^0.18.0",
-    "botbuilder": "^3.4.4",
+    "botbuilder": "^3.10.1",
     "restify": "^4.3.0"
-  }
+  },
+  "main": "NativeConversation.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SujithOnWeb/ChatLearning1.git"
+  },
+  "author": "Sujith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SujithOnWeb/ChatLearning1/issues"
+  },
+  "homepage": "https://github.com/SujithOnWeb/ChatLearning1#readme"
 }
