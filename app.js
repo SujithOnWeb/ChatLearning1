@@ -156,7 +156,7 @@ bot.dialog('/', [
             ]);
         var msg = new builder.Message(session).attachments([card]);
         session.send(msg);
-        session.send("Hi There... I'm Foresters's bot for your Help. I can help you for most of your generic queries. If I am not able to help you, I can collect your query and do a call back for you.");
+        session.send("Hi There... I'm POC Foresters's bot for your Help. I can help you for most of your generic queries. If I am not able to help you, I can collect your query and do a call back for you.");
         session.beginDialog('/help');
     },
     function(session, results) {
