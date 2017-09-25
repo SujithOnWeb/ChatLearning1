@@ -186,8 +186,8 @@ bot.dialog('/menu', [
                 // .text("Payment Related Queries")
                 .images([
                     // builder.CardImage.create(session, "https://v9zyuw-sn3301.files.1drv.com/y3mE7EmeBZ6Ta_R5dierdYdLp5BtEEn5SB49lTROsZxsQBBS_wTggS2VpQgS1xQZyI86MC52a69zlJV-9pjrRDi3XImLTl84T_1v09Bk7dkyR9j2RccmdfjD-qTIoL3v-doPYkLBnP5qldaYR1lB7z6Oc5zEB78DPBTzrYsRvvMIFg?width=89&height=94&cropmode=none")
-                    builder.CardImage.create(session, "https://utztuw-sn3301.files.1drv.com/y3mrq3YdHk56tLUwITihJ0eOjnL0GSoW2yGRTJOQo497qFkzSGzdgM0DyBieuCg-EjNzzXyQydISVuN2_PB7D4NdW3VNOWLxZS9AfWVlkK7rkxmk2zVMXJ2ucKtaUyXxDx7q1E_RWpGIdxjCFYvu4uhIzPr8DNGlEo0pZxFo-d2blk?width=192&height=128&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utztuw-sn3301.files.1drv.com/y3mrq3YdHk56tLUwITihJ0eOjnL0GSoW2yGRTJOQo497qFkzSGzdgM0DyBieuCg-EjNzzXyQydISVuN2_PB7D4NdW3VNOWLxZS9AfWVlkK7rkxmk2zVMXJ2ucKtaUyXxDx7q1E_RWpGIdxjCFYvu4uhIzPr8DNGlEo0pZxFo-d2blk?width=192&height=128&cropmode=none")),
+                    builder.CardImage.create(session, "https://biotvw.dm2301.livefilestore.com/y4mF-CrdFU674Vm5V_MybFiK6H4GXUNipQwYqoTUc0Ne0PVCNtAt_4fNN_bMYwBCzBFZn6F5ZbtJJq6eqdQXWw4QiSDZmcPiIsqSkTpphYotJVjkgnN8c0_nEg-ziaC9cbc0zrPoKLEX2_kjL_Yh9BCGQ_tOj1Ds9qgavCAdu_QIo8pGTNn9r_d2fqyKPPQ5A9jOq5VysNv5rvcNCmgnCFYzA?width=233&height=216&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://biotvw.dm2301.livefilestore.com/y4mF-CrdFU674Vm5V_MybFiK6H4GXUNipQwYqoTUc0Ne0PVCNtAt_4fNN_bMYwBCzBFZn6F5ZbtJJq6eqdQXWw4QiSDZmcPiIsqSkTpphYotJVjkgnN8c0_nEg-ziaC9cbc0zrPoKLEX2_kjL_Yh9BCGQ_tOj1Ds9qgavCAdu_QIo8pGTNn9r_d2fqyKPPQ5A9jOq5VysNv5rvcNCmgnCFYzA?width=233&height=216&cropmode=none")),
                 ])
                 .buttons([
                     // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Wikipedia"),
@@ -196,8 +196,8 @@ bot.dialog('/menu', [
                 new builder.HeroCard(session)
                 //.text("Claims related Queries")
                 .images([
-                    builder.CardImage.create(session, "https://utzouw-sn3301.files.1drv.com/y3mTi0HjNd5AIelsCRp0VDT77uTiL9U7FSEOiwYCMoXqTwjgTDp9gGGsafLEwZfDI8xnbkzeFFqjmCrshCRyItzTK9AoB0ZMZlxJdPsF_SCFpOuZwUAxWROIdXezpTBLdFngFP-k3PzNTSYQ6V0t_6gmUCZUQNuQcrQm8MUVU0iRIk?width=187&height=128&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utzouw-sn3301.files.1drv.com/y3mTi0HjNd5AIelsCRp0VDT77uTiL9U7FSEOiwYCMoXqTwjgTDp9gGGsafLEwZfDI8xnbkzeFFqjmCrshCRyItzTK9AoB0ZMZlxJdPsF_SCFpOuZwUAxWROIdXezpTBLdFngFP-k3PzNTSYQ6V0t_6gmUCZUQNuQcrQm8MUVU0iRIk?width=187&height=128&cropmode=none")),
+                    builder.CardImage.create(session, "https://bin3bg.dm2301.livefilestore.com/y4mcC6GzrMTjOakZRd39ovKHUgJv8fOzV_2z9xmYRg4nb9RubvsYK4MMc7LKE3sOGw3aIlGQEqCV09DddTgxYEPQdPvjKyo6lB7QpBgBBERdxzqIm_2OnLphOPGz-oVwRFI7Ey8AMI1_mXH19EKoF8JSV4oaO2d0yLI7sN_iZGwF1pxRvjqvQSIcJ8pmEbdV_ONsx2N0QqqPixW1v2JbK-I5Q?width=800&height=600&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://bin3bg.dm2301.livefilestore.com/y4mcC6GzrMTjOakZRd39ovKHUgJv8fOzV_2z9xmYRg4nb9RubvsYK4MMc7LKE3sOGw3aIlGQEqCV09DddTgxYEPQdPvjKyo6lB7QpBgBBERdxzqIm_2OnLphOPGz-oVwRFI7Ey8AMI1_mXH19EKoF8JSV4oaO2d0yLI7sN_iZGwF1pxRvjqvQSIcJ8pmEbdV_ONsx2N0QqqPixW1v2JbK-I5Q?width=800&height=600&cropmode=none")),
                 ])
                 .buttons([
                     // builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Pike_Place_Market", "Wikipedia"),
@@ -207,8 +207,8 @@ bot.dialog('/menu', [
                 // .title("Foresters Financial")
                 // .text("PO Box 179 Buffalo, NY 14201 Toll-Free Fax: 877 329 4631 \n Email:service@foresters.com")
                 .images([
-                    builder.CardImage.create(session, "https://utznuw-sn3301.files.1drv.com/y3mckX6xNf8nWT7uZibn7AbkB13TBwIFnO0-uQcYA3ToJxss7Pdx74RPxMIXs5ybMvmwC-MpRmnJsCWkFmoVcMVgcT8SB-bzjHYj-hqW1G0i_-UpZEHN8SXcIlVYTV7Zr1J-heGgsEK-N7vfpFoH8id6Te7cpf7_G4NTQ2ukgtEZ4Q?width=185&height=128&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://utznuw-sn3301.files.1drv.com/y3mckX6xNf8nWT7uZibn7AbkB13TBwIFnO0-uQcYA3ToJxss7Pdx74RPxMIXs5ybMvmwC-MpRmnJsCWkFmoVcMVgcT8SB-bzjHYj-hqW1G0i_-UpZEHN8SXcIlVYTV7Zr1J-heGgsEK-N7vfpFoH8id6Te7cpf7_G4NTQ2ukgtEZ4Q?width=185&height=128&cropmode=none")),
+                    builder.CardImage.create(session, "https://bipcpq.dm2301.livefilestore.com/y4mC27fTwS9dovWIqGguSmxsEYwMsdcq7mtjgkIk17fWCwlTNpiIQXSSTcbdGGpcEZ0NgMdar75gd_LJJYNjqTBEA59KH_wP9VEVVo9bB3rsK8Q6OsqGf3hlJrQeGqsUzQcc6qZgpD9drkWuFFz0tj5o_LKi8w4cF15BqRTqwmilzLnhhNINDR00k5RyF47gdSfcnzCmIgX2tXM6SkDCXYb4w?width=800&height=600&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://bipcpq.dm2301.livefilestore.com/y4mC27fTwS9dovWIqGguSmxsEYwMsdcq7mtjgkIk17fWCwlTNpiIQXSSTcbdGGpcEZ0NgMdar75gd_LJJYNjqTBEA59KH_wP9VEVVo9bB3rsK8Q6OsqGf3hlJrQeGqsUzQcc6qZgpD9drkWuFFz0tj5o_LKi8w4cF15BqRTqwmilzLnhhNINDR00k5RyF47gdSfcnzCmIgX2tXM6SkDCXYb4w?width=800&height=600&cropmode=none")),
                 ])
                 .buttons([
                     builder.CardAction.openUrl(session, "http://foresters.com", "Foresters.com"),
@@ -227,8 +227,8 @@ bot.dialog('/menu', [
                 ]),
                 new builder.HeroCard(session)
                 .images([
-                    builder.CardImage.create(session, "https://udzwuw-sn3301.files.1drv.com/y3mLWEz_fg478YQ69FT8A5tM3QuzKkJHW26GLX1p3k0NQrZDynXXNri1zyVRhRq0SHEs1NNyu2iT1UK3bhKnsaYF4wZSMiDjnqh4F9ppsONHMn_OKydvDEAqnc4Btbe7sUL5cAA6elX_b9yejEHLFY2JImB9cdaewCaeZzfsxJa4IM?width=185&height=128&cropmode=none")
-                    .tap(builder.CardAction.showImage(session, "https://udzwuw-sn3301.files.1drv.com/y3mLWEz_fg478YQ69FT8A5tM3QuzKkJHW26GLX1p3k0NQrZDynXXNri1zyVRhRq0SHEs1NNyu2iT1UK3bhKnsaYF4wZSMiDjnqh4F9ppsONHMn_OKydvDEAqnc4Btbe7sUL5cAA6elX_b9yejEHLFY2JImB9cdaewCaeZzfsxJa4IM?width=185&height=128&cropmode=none"))
+                    builder.CardImage.create(session, "https://bims4w.dm2301.livefilestore.com/y4mopUXbkRiNqKXw_gg-C3UjEzI9DK2rM-0Hd0t8d0mMDozvP3T9i8fWPHvwZzrzIwlXJrVw9RWDAQcX8JV20nPpxh-wVWYrpwwvz0ilj25Xk5qfKWCkxkMOQFvTAyvi2YXJ108wLsM8J4_C_ff6UR_tY43TrxSqILjR73kVvRF4KsVYV1fYF27GV2Z_gliWoe3aXu6CV82NBWqtJp8QO4pTQ?width=268&height=198&cropmode=none")
+                    .tap(builder.CardAction.showImage(session, "https://bims4w.dm2301.livefilestore.com/y4mopUXbkRiNqKXw_gg-C3UjEzI9DK2rM-0Hd0t8d0mMDozvP3T9i8fWPHvwZzrzIwlXJrVw9RWDAQcX8JV20nPpxh-wVWYrpwwvz0ilj25Xk5qfKWCkxkMOQFvTAyvi2YXJ108wLsM8J4_C_ff6UR_tY43TrxSqILjR73kVvRF4KsVYV1fYF27GV2Z_gliWoe3aXu6CV82NBWqtJp8QO4pTQ?width=268&height=198&cropmode=none"))
                 ])
                 .buttons([
                     builder.CardAction.imBack(session, "Quit", "Quit")
